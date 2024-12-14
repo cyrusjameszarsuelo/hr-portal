@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Magistral';
+    src: local('Magistral Medium'), local('Magistral-Medium'),
+        url('Magistral-Medium.woff2') format('woff2'),
+        url('Magistral-Medium.woff') format('woff'),
+        url('Magistral-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }

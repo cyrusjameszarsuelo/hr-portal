@@ -1,0 +1,656 @@
+@extends('welcome')
+
+@section('title', 'Human Resources')
+
+@section('content')
+
+<div class="fables-header bg-white index-3-height bg-rules overflow-hidden">
+    <div class="container position-relative z-index">   
+        <div class="row">
+            <div class="col-12 col-lg-7 offset-lg-4 wow fadeInUpBig" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-name: fadeInUpBig; ">
+                <div class="index-3-height-caption">
+                    <h1 class="fables-main-text-color bold-font mb-2 font-40">Corporate Human Resources</h1>  
+                    <p class="fables-forth-text-color font-22 mb-3">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    </p>
+                    <a href="#structure" class="btn fables-second-background-color fables-second-border-color white-color rounded-0 mr-4 px-4 py-2 white-color-hover">Get Started</a>  
+                </div> 
+            </div>
+        </div> 
+    </div>
+</div>
+
+<div class="container-fluid" id="structure">
+    <h2 class="fables-main-text-color font-35 font-weight-bold text-center mt-4 mt-lg-5">Your <span class="fables-second-text-color">HR</span> Team </h2>
+    <p class="fables-forth-text-color text-center mb-4 mb-lg-5">Our Organizational Structure</p>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+            <div class="tf-tree example" style="zoom: 70%;">
+                <ul>
+                    <li>
+                        <span class="tf-nc">
+                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                <div class="text-center circular">
+                                    <img src="{{asset('img/HR Images/Maria Belinda Morales 1.jpg')}}" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body ">
+                                    <h5 class="card-title">MARIA BELINDA BOGNOT MORALES</h5>
+                                    <p class="card-text">CHIEF HUMAN RESOURCES OFFICER</p>
+                                </div>
+                            </div>
+                        </span>
+                        <ul>
+                            <li>
+                                <span class="tf-nc">
+                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                        <div class="text-center circular">
+                                            <img  src="{{asset('img/HR Images/Manuel Ongjuco 1.jpg')}}" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body ">
+                                            <h5 class="card-title">MANUEL YU ONGJUCO</h5>
+                                            <p class="card-text">HR OPERATIONS HEAD</p>
+                                        </div>
+                                    </div>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="{{asset('img/HR Images/Matias, Winnie.jpg')}}" class="card-img-top" alt="...">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">WINNIE FRANCIA MATIAS</h5>
+                                                    <p class="card-text">COMPENSATION AND BENEFITS SUPERVISOR</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="{{asset('img/HR Images/Barte,Jayson.jpg')}}" class="card-img-top" alt="...">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">JAYSON SANTILLAN BARTE</h5>
+                                                    <p class="card-text">TECHNICAL ANALYST</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="https://cdn2.vectorstock.com/i/thumb-large/15/21/female-avatar-profile-picture-silhouette-light-vector-5351521.jpg" class="card-img-top" alt="..." style="top: 50%">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">MA. ROSE ANNE MADRONA DE LUMBA</h5>
+                                                    <p class="card-text">HR ASSISTANT</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="{{asset('img/HR Images/Sangeles,Bennie.jpg')}}" class="card-img-top" alt="...">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">BENNIE FAMINIALAN SANGELES</h5
+>                                                    <p class="card-text">PAYROLL ASSISTANT MANAGER</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                        <ul>
+                                            <li>
+                                                <span class="tf-nc">
+                                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                        <div class="text-center circular">
+                                                            <img  src="{{asset('img/HR Images/Galang, Annie Joy.jpg')}}" class="card-img-top" alt="...">
+                                                        </div>
+                                                        <div class="card-body ">
+                                                            <h5 class="card-title">ANNIE JOY MANUEL GALANG</h5>
+                                                            <p class="card-text">PAYROLL ASSISTANT</p>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="tf-nc">
+                                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                        <div class="text-center circular">
+                                                            <img  src="{{asset('img/HR Images/Bustos, Ariel.jpg')}}" class="card-img-top" alt="...">
+                                                        </div>
+                                                        <div class="card-body ">
+                                                            <h5 class="card-title">ARIEL VALLESTEROS BUSTOS</h5>
+                                                            <p class="card-text">PAYROLL ASSISTANT</p>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="tf-nc">
+                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                        <div class="text-center circular">
+                                            <img  src="{{asset('img/HR Images/Fresnoza, Katherine.jpg')}}" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body ">
+                                            <h5 class="card-title">KATHERINE LEE FRESNOZA</h5>
+                                            <p class="card-text">TOTAL REWARDS HEAD</p>
+                                        </div>
+                                    </div>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="{{asset('img/HR Images/Salilican, Melissa.jpg')}}" class="card-img-top" alt="...">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">MELISSA LORENZO SALILICAN</h5>
+                                                    <p class="card-text">ADMIN SUPERVISOR</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                        <ul>
+                                            <li>
+                                                <span class="tf-nc">
+                                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                        <div class="text-center circular">
+                                                            <img  src="{{asset('img/HR Images/Ferrer, Rusky.jpg')}}" class="card-img-top" alt="...">
+                                                        </div>
+                                                        <div class="card-body ">
+                                                            <h5 class="card-title">RUSKY LEGASPI FERRER</h5>
+                                                            <p class="card-text">MESSENGER</p>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="tf-nc">
+                                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                        <div class="text-center circular">
+                                                            <img  src="{{asset('img/HR Images/Madua, John Paul.jpg')}}" class="card-img-top" alt="...">
+                                                        </div>
+                                                        <div class="card-body ">
+                                                            <h5 class="card-title">JOHN PAUL PARDILLA MAGDUA</h5>
+                                                            <p class="card-text">DRIVER</p>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="tf-nc">
+                                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                        <div class="text-center circular">
+                                                            <img  src="{{asset('img/HR Images/Clavio, Phillip.jpg')}}" class="card-img-top" alt="...">
+                                                        </div>
+                                                        <div class="card-body ">
+                                                            <h5 class="card-title">PHILLIP MANALO CLAVIO</h5>
+                                                            <p class="card-text">MESSENGER</p>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </li>
+                                        </ul>   
+                                    </li>
+                                </ul>   
+                            </li>
+                            <li>
+                                <span class="tf-nc">
+                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                        <div class="text-center circular">
+                                            <img  src="{{asset('img/HR Images/Maramba, Joy Noree.jpg')}}" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body ">
+                                            <h5 class="card-title">JOY NOREE NOMURA MARAMBA</h5>
+                                            <p class="card-text">LEARNING AND TALENT MANAGEMENT HEAD</p>
+                                        </div>
+                                    </div>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="{{asset('img/HR Images/Curia, Daniella Joyce.jpg')}}" class="card-img-top" alt="...">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">DANIELLA JOYCE REAMBILLO CURIA</h5>
+                                                    <p class="card-text">LEARNING & DEVELOPMENT OFFICER</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="{{asset('img/HR Images/Evangelista, Nigel Bryant.jpg')}}" class="card-img-top" alt="...">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">NIGEL BRYANT BISA EVANGELISTA</h5>
+                                                    <p class="card-text">TALENT MANAGEMENT AND ORGANIZATIONAL DEVELOPMENT OFFICER</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="tf-nc">
+                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                        <div class="text-center circular">
+                                            <img  src="{{asset('img/HR Images/Silvestre, Jovie Milagros.jpg')}}" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body ">
+                                            <h5 class="card-title">JOVIE MILAGROS ABRAHAM SILVESTRE</h5>
+                                            <p class="card-text">TALENT ACQUISITION MANAGER</p>
+                                        </div>
+                                    </div>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <span class="tf-nc">
+                                            <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                                <div class="text-center circular">
+                                                    <img  src="{{asset('img/HR Images/Tan, Kaysey Ann.jpg')}}" class="card-img-top" alt="...">
+                                                </div>
+                                                <div class="card-body ">
+                                                    <h5 class="card-title">KAYSEY ANN TARGA TAN</h5>
+                                                    <p class="card-text">HR OFFICER</p>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="tf-nc">
+                                    <div class="card " style="width: 7rem; border: none; background-color: #f2f2f2">
+                                        <div class="text-center circular">
+                                            <img  src="{{asset('img/HR Images/Inciong, Kristina Mae.jpg')}}" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body ">
+                                            <h5 class="card-title">KRISTINA MAE AÑONUEVO INCIONG</h5>
+                                            <p class="card-text">EXECUTIVE ASSISTANT</p>
+                                        </div>
+                                    </div>
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Featured News Slider Start -->
+<div class="container-fluid py-3">
+    <div class="">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center justify-content-between py-2 px-4">
+                    <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3 ">General Announcement</h2> 
+                    <a class="text-secondary font-weight-medium text-decoration-none" href="/view-all-announcements/{{ $generalAnnouncement->content_type->id }}">View All</a>
+                </div>
+
+                <div class="text-center position-relative mb-3 mb-lg-0">
+                    <div class="position-relative overflow-hidden" style="height: 600px;">
+                        <img class="img-fluid h-100" src="{{ asset ($generalAnnouncement->image)}}" style="object-fit: cover;">
+                        <div class="overlay ">
+                            <div class="mb-1">
+                                <a class="text-white" href="">{{ $generalAnnouncement->content_type->type }}</a>
+                                <span class="px-2 text-white">/</span>
+                                <a class="text-white" href="">{{ $generalAnnouncement->created_at }}</a>
+                            </div>
+                            <a class="h2 m-0 text-white font-weight-bold" type="button" data-toggle="modal" data-target="#generalAnnouncementModal"  onclick="getSubData('{{ $generalAnnouncement->title }}', '{{ $generalAnnouncement->content_type->type }}', '{{ $generalAnnouncement->created_at }}', '{!! $generalAnnouncement->content !!}', '{{ $generalAnnouncement->image }}')">{{ $generalAnnouncement->title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-2">
+                <div class="row mt-6">
+                        @foreach($generalAnnouncementAll as $key => $generalAnnouncementAllData)
+                            @if($key < 10)
+                                <div class="col-3 mb-2">
+                                    <div class="image-container zoomIn-effect position-relative" style="width: 75%; height: 100px;">
+                                        <img src="{{ asset ($generalAnnouncementAllData->image)}}" alt="" class="w-100">
+                                    </div>
+                                </div>
+                                <div class="col-3 pl-0 mb-2">
+                                    <a type="button" data-toggle="modal" data-target="#generalAnnouncementModal"  onclick="getSubData('{{ $generalAnnouncementAllData->title }}', '{{ $generalAnnouncementAllData->content_type->type }}', '{{ $generalAnnouncementAllData->created_at }}', '{!! $generalAnnouncementAllData->content !!}', '{{ $generalAnnouncementAllData->image }}')" class="fables-main-text-color bold-font fables-second-hover-color blog-smaller-head">{{ str_limit($generalAnnouncementAllData->title, 40, '...') }}</a>
+                                    <p class="fables-forth-text-color font-12" style="margin: 0px">{{ \Carbon\Carbon::parse($generalAnnouncementAllData->created_by)->format('M/d/Y H:i:s') }}</p>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div> 
+                    <div class="text-right">
+                        <a href="/view-all-announcements/{{ $generalAnnouncement->content_type->id }}" class="btn fables-second-text-color underline fables-main-text-color font-14"> More</a>
+                    </div>
+            </div>
+        </div>
+
+        
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-7 py-2">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between py-2 px-4">
+                            <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3 ">Memorandum</h2> 
+                            <a class="text-secondary font-weight-medium text-decoration-none" href="/view-all-announcements/{{ $memorandum->content_type->id }}">View All</a>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 300px;">
+                            <img class="img-fluid w-100 h-100" src="{{ asset ($memorandum->image) }}" style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1" style="font-size: 13px; font-weight: 500;">
+                                    <a class="text-white" >{{ $memorandum->content_type->type }}</a>
+                                    <span class="px-1 text-white">/</span>
+                                    <a class="text-white" >{{ $memorandum->created_at }}</a>
+                                </div>
+                                <a class="h4 m-0 text-white"  style="cursor: pointer;" data-toggle="modal" data-target="#generalAnnouncementModal" onclick="getSubData('{{ $memorandum->title }}', '{{ $memorandum->content_type->type }}', '{{ $memorandum->created_at }}', '{!! $memorandum->content !!}', '{{ $memorandum->image }}')">{{ $memorandum->title }}</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between py-2 px-4">
+                            <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3 ">HMO</h2> 
+                            <a class="text-secondary font-weight-medium text-decoration-none" href="/view-all-announcements/{{ $hmoAnnouncement->content_type->id }}">View All</a>
+                        </div>
+                        <div class="position-relative overflow-hidden" style="height: 300px;">
+                            <img class="img-fluid w-100 h-100" src="{{ asset ($hmoAnnouncement->image) }}" style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-1" style="font-size: 13px; font-weight: 500;">
+                                    <a class="text-white" >{{ $hmoAnnouncement->content_type->type }}</a>
+                                    <span class="px-1 text-white">/</span>
+                                    <a class="text-white" >{{ $hmoAnnouncement->created_at }}</a>
+                                </div>
+                                <a class="h4 m-0 text-white"  style="cursor: pointer;" data-toggle="modal" data-target="#generalAnnouncementModal" onclick="getSubData('{{ $hmoAnnouncement->title }}', '{{ $hmoAnnouncement->content_type->type }}', '{{ $hmoAnnouncement->created_at }}', '{!! $hmoAnnouncement->content !!}', '{{ $hmoAnnouncement->image }}')">{{ $hmoAnnouncement->title }}</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-5 align-self-center mt-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="info-box bg-warning wow zoomIn" data-wow-delay=".3s">
+                            <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+                            <div class="info-box-content">
+                                <a target="_blank" href="https://megawideph.sharepoint.com/sites/HLD.HRPublic/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FHLD%2EHRPublic%2FShared%20Documents%2F400%20Policies&FolderCTID=0x01200070E57EF218BAB84FBF05BFC0E44B94B3" class="text-white links-hover"><span class="info-box-text">Policies and Procedures</span></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="info-box bg-success wow zoomIn" data-wow-delay=".6s">
+                            <span class="info-box-icon"><i class="fas fa-heart"></i></span>
+                            <div class="info-box-content">
+                                <a target="_blank" href="https://megawideph.sharepoint.com/sites/HLD.HRPublic/Shared%20Documents/Forms/AllItems.aspx?FolderCTID=0x01200070E57EF218BAB84FBF05BFC0E44B94B3&id=%2Fsites%2FHLD%2EHRPublic%2FShared%20Documents%2F400%20Policies%2FHLD%2E%20HRD%2E%20Code%20of%20Conduct%2E%202020%2009%2005%2Epdf&parent=%2Fsites%2FHLD%2EHRPublic%2FShared%20Documents%2F400%20Policies" class="text-white links-hover"><span class="info-box-text">Code of Conduct</span></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="info-box bg-danger wow zoomIn" data-wow-delay=".7s">
+                            <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
+                            <div class="info-box-content">
+                                <a target="_blank" href="https://megawideph.sharepoint.com/sites/HLD.HRPublic/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FHLD%2EHRPublic%2FShared%20Documents%2F300%20Forms%20and%20Templates&FolderCTID=0x01200070E57EF218BAB84FBF05BFC0E44B94B3" class="text-white links-hover"><span class="info-box-text">Forms and Templates</span></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="info-box bg-info wow zoomIn" data-wow-delay="1.2s">
+                            <span class="info-box-icon"><i class="fas fa-comment"></i></span>
+                            <div class="info-box-content">
+                                <a href="#" class="text-white links-hover"><span class="info-box-text">Job Vacancies</span></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="info-box bg-secondary wow zoomIn" data-wow-delay="1.5s">
+                            <span class="info-box-icon"><i class="fas fa-image"></i></span>
+                            <div class="info-box-content">
+                                <a href="/photo-gallery" class="text-white links-hover"><span class="info-box-text">Photo Gallery</span></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-5">
+            <div class="d-flex align-items-center justify-content-between py-2 px-4">
+                <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3">Demographics</h2> 
+            </div>
+            <div class="position-relative mb-4"> 
+                <a data-fancybox="demographics" href="{{asset('img/Demographics/JUNE 2022/Demographics May 2022.png')}}" >
+                    <div class="image-container position-relative">
+                        <img src="{{asset('img/Demographics/JUNE 2022/Demographics May 2022.png')}}" alt="" class="w-100">
+                    </div>
+                    <div class="fables-blog-overlay text-white pl-2 pl-lg-4 pb-5"> 
+                    </div>
+                </a>
+                {{-- <div class="fables-blog-overlay text-white pl-2 pl-lg-4 pb-5"> 
+                    <div class="text-white font-14">                                  
+                        <span class="fables-icondata fables-second-text-color mr-1"></span> 
+                        <span class="mr-3"> 09 November, 2018 </span>
+                    </div>
+                    <h2 class="position-relative z-index"><a href="#" class="font-18 semi-font pb-3 text-white border-bottom d-none d-lg-block">Getting to Another Level of Design</a></h2> 
+                </div>  --}}
+            </div>
+        </div>
+
+        <div class="col-md-7">
+
+
+            <div class="row">
+                <div class="col-md-7">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex align-items-center justify-content-between py-2 px-4">
+                                <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3">How To's</h2> 
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            @include('pages.how_tos')
+                        </div>
+                        <div class="col-md-5">
+                            <a type="button" class="fables-main-text-color font-14 bold-font fables-second-hover-color blog-smaller-head"><li>GLI Claim Process</li></a>
+                            
+                        </div>
+                        
+                    </div>
+
+
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex align-items-center justify-content-between py-2 px-4">
+                        <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3">Did you know?</h2> 
+                    </div>
+
+
+                    @include('pages.did_you_know')
+                    {{-- <div class="row">
+                            <div class="col-md-3"><h1 style="font-size: 100px;">5</h1></div>
+                            <div class="col-md-9">
+                                <u><h4 class="font-30 mt-4 ">
+                                    <a type="button" onclick="document.getElementById('did-you-know').click();" class="fables-main-text-color bold-font fables-second-hover-color blog-smaller-head">Things you can ask your boss</a>
+                                </h4></u>
+                            </div>
+                    </div> --}}
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-md-12 "> 
+                    <div class="d-flex align-items-center justify-content-between py-2 px-4">
+                        <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3">Megawide University</h2> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <embed src="{{asset('img/Megawide University/Emotional & Social Intelligence.pdf')}}" width="100%" height="300px" />
+                        </div>
+
+                        <div class="col-md-3">
+                            <a type="button" class="fables-main-text-color font-14 bold-font fables-second-hover-color blog-smaller-head"><li>GLI Claim Process</li></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+@include('pages.faqs')
+
+    <!-- Modal -->
+    <div class="modal fade" id="generalAnnouncementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="background-color: #e4e4e4;">
+                    <div class="container ">
+                        <h2 class="text-center" id="titleGeneralAnnouncement" style="color: #ee3124"></h2>
+                        <hr style="border: 3px solid #c1c1c1; width: 10%;">
+                        <br>
+                        <div class="row justify-content-center">
+
+                            <div class="square">
+                                <div id="imageGeneralAnnouncement"> </div>
+                                <p class="modalp" id="textGeneralAnnouncement" style="color: black;"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalTree" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div id="imageTree"></div>
+                        </div>
+
+                        <div class="col-md-6 align-self-center" style="border: 1px solid; padding: 25px">
+                            
+                            <h3 class="font-30" id="nameTree"></h3>
+                            <hr style="width: 10%; border: solid 2px black;">
+                            <p class="font-20" id="positionTree"></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <style>
+
+    .circular {
+        margin-left: 25px;
+        margin-bottom: 5px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+    .circular img {
+        min-width: 50%;
+        min-height: 50%;
+        /*width: auto;
+        height: auto;*/
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .card-text {
+        font-size: 11px;
+        color: black;
+    }
+
+    .tf-tree li {
+        padding: 0 2px;
+    }
+
+    .card-body {
+        margin: 0 -10px;
+    }
+
+    div.panel-body > p {
+        color: black;
+        letter-spacing: 0px;
+        font-size: 16px;
+    }
+
+
+</style>
+
+@endsection
+
+@section('scripts')
+    <script>
+        $(".example").scrollLeft(($(".example")[0].scrollWidth - $(".example")[0].clientWidth) / 2);
+
+    </script>
+    <script src="{{asset('assets/custom/js/human_resources.js')}}"></script>
+@endsection
