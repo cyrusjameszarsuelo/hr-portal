@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SurveyAnswer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class SurveyAnswerController extends Controller
 {
@@ -38,11 +38,11 @@ class SurveyAnswerController extends Controller
     public function store(Request $request)
     {
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $survey = new SurveyAnswer;
 
-        $survey->survey_name = $user['contacts']['displayName'];
+        $survey->survey_name = $user['displayName'];
         $survey->survey_id = $request->survey_id;
         $survey->choices_id = $request->choices_id;
 

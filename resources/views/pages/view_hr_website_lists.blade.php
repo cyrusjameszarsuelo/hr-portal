@@ -30,7 +30,7 @@
 		<div class="row my-4 my-lg-5">
 			<div class="col-12 col-lg-8">
 
-				@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == 'cjzarsuelo@megawide.com.ph')
+				@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == 'cjzarsuelo@megawide.com.ph')
 				{{-- <a type="button" class="btn btn-primary fables-btn-rounded" href="{{url('/main/blogs')}}">Add Blog</a> --}}
                 <button class="btn btn-primary fables-btn-rounded btn-sm" type="button" data-toggle="modal" data-target="#addHrWebsite">Add {{$title}}</button>
                 @endif
@@ -77,7 +77,7 @@
 
 								<a class="btn fables-second-text-color underline fables-main-hover-text-color p-0 fables-main-hover-color" type="button" data-toggle="modal" data-target="#hrWebsiteModal"  onclick='getSubData2({{$hrWebsiteData}})'>View</a>
 								{{-- <a class="btn fables-second-text-color underline fables-main-hover-text-color p-0 fables-main-hover-color" type="button" data-toggle="modal" data-target="#addAnnouncement" onclick='editAnnouncement()'>Edit</a> --}}
-								@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == 'cjzarsuelo@megawide.com.ph')
+								@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == 'cjzarsuelo@megawide.com.ph')
 
 								<a class="btn fables-second-text-color underline fables-main-hover-text-color p-0 fables-main-hover-color" type="button" data-toggle="modal" data-target="#deleteHrWebsiteModal" onclick ="deleteHrWebsite('{{$hrWebsiteData->name}}', {{$hrWebsiteData->id}})">Delete</a>
 								@endif

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\MegaGoodVibes;
 use App\Models\Megagoodvibes_Likes;
 use App\Models\Megagoodvibes_Comments;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 ini_set('max_execution_time', 9999);
 ini_set('upload_max_filesize', 9999);
@@ -62,11 +62,11 @@ class MegaGoodVibesController extends Controller
 
     public function addComment(Request $request)
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $megagoodvibes_comments = new Megagoodvibes_Comments;
 
-        $megagoodvibes_comments->user =  $user['contacts']['mail'];
+        $megagoodvibes_comments->user =  $user['mail'];
         $megagoodvibes_comments->megagoodvibes_id =  $request->megagoodvibes_id;
         $megagoodvibes_comments->comment =  $request->comment;
 
@@ -77,11 +77,11 @@ class MegaGoodVibesController extends Controller
 
     public function like(Request $request)
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $megagoodvibes_likes = new Megagoodvibes_Likes;
 
-        $megagoodvibes_likes->user =  $user['contacts']['mail'];
+        $megagoodvibes_likes->user =  $user['mail'];
         $megagoodvibes_likes->megagoodvibes_id =  $request->megagoodvibes_id;
 
         $megagoodvibes_likes->save();
@@ -91,9 +91,9 @@ class MegaGoodVibesController extends Controller
 
     public function dislike(Request $request)
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
-        $megagoodvibes_likes = Megagoodvibes_Likes::where('user', $user['contacts']['mail'])
+        $megagoodvibes_likes = Megagoodvibes_Likes::where('user', $user['mail'])
             ->where('megagoodvibes_id', $request->megagoodvibes_id);
 
         $megagoodvibes_likes->delete();

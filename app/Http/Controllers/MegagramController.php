@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Megagram;
 use App\Models\Megagram_Likes;
 use App\Models\Megagram_Comment;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class MegagramController extends Controller
 {
@@ -25,9 +25,9 @@ class MegagramController extends Controller
 
     public function megagram()
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
-        $like = Megagram_Likes::where('user', $user['contacts']['mail'])->first();
+        $like = Megagram_Likes::where('user', $user['mail'])->first();
         $megagram = Megagram::where('active', 1)->first();
         $likeCount = Megagram_Likes::where('megagram_id', $megagram->id)->count();
         $megagramComments = Megagram_Comment::where('megagram_id', $megagram->id)
@@ -45,11 +45,11 @@ class MegagramController extends Controller
 
     public function like(Request $request) 
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $like = new Megagram_Likes;
 
-        $like->user = $user['contacts']['mail'];
+        $like->user = $user['mail'];
         $like->megagram_id = $request->megagram_id;
 
         $like->save();
@@ -61,9 +61,9 @@ class MegagramController extends Controller
 
     public function dislike()
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
-        $like = Megagram_Likes::where('user', $user['contacts']['mail'])
+        $like = Megagram_Likes::where('user', $user['mail'])
             ->where('megagram_id', '1');
 
         $like->delete();
@@ -74,11 +74,11 @@ class MegagramController extends Controller
     public function addComment(Request $request)
     {
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $megagram_comment = new Megagram_Comment;
 
-        $megagram_comment->user = $user['contacts']['mail'];
+        $megagram_comment->user = $user['mail'];
         $megagram_comment->comment = $request->comment;
         $megagram_comment->megagram_id = $request->megagram_id;
 

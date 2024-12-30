@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Photo_Gallery;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class PhotoGalleryController extends Controller
 {
@@ -16,7 +16,7 @@ class PhotoGalleryController extends Controller
     public function index()
     {
         $photos = Photo_Gallery::all();
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
 
         return view('pages.photo_gallery')

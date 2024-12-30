@@ -46,7 +46,7 @@
 						<input type="submit" {{$disabled}} class="btn btn-primary" />
 						
 					</h2>
-					<input type="hidden" name="user_answer" value="{{$user['contacts']['mail']}}">
+					<input type="hidden" name="user_answer" value="{{$user['mail']}}">
 					<input type="hidden" name="megatrivia_id" value="{{$megatrivia->id}}">
 				</form>
 			@endif
@@ -147,7 +147,7 @@
 @section('scripts')
 	<script src="{{asset('js/megatrivia.js')}}"></script>
 	@if ($megatriviaAnswer != null) {
-		@if(trim(strtolower($megatriviaAnswer->megatrivia_answer)) == trim(strtolower($megatrivia->answer)) && $megatriviaAnswer->user_answer == $user['contacts']['mail'])
+		@if(trim(strtolower($megatriviaAnswer->megatrivia_answer)) == trim(strtolower($megatrivia->answer)) && $megatriviaAnswer->user_answer == $user['mail'])
 			<script>
 				$(document).ready(function() {
 				  Swal.fire({
@@ -165,7 +165,7 @@
 	@endif
 
 	@if ($megatriviaAnswerUser != null) {
-		@if (trim(strtolower($megatriviaAnswerUser->megatrivia_answer)) != trim(strtolower($megatrivia->answer)) && $megatriviaAnswerUser->user_answer == $user['contacts']['mail'])
+		@if (trim(strtolower($megatriviaAnswerUser->megatrivia_answer)) != trim(strtolower($megatrivia->answer)) && $megatriviaAnswerUser->user_answer == $user['mail'])
 		<script>
 			$(document).ready(function() {
 			  Swal.fire({

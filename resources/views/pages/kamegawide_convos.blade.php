@@ -11,7 +11,7 @@
                                     <div class="col-md-1">
                                         <div class="avatar">
                                             <div class="avatar__letters">
-                                                {{str_replace(' ', '', substr($user['contacts']['displayName'], 0, 1) . substr(substr($user['contacts']['displayName'], strpos($user['contacts']['displayName'], ",")), 1, 2))}}
+                                                {{str_replace(' ', '', substr($user['displayName'], 0, 1) . substr(substr($user['displayName'], strpos($user['displayName'], ",")), 1, 2))}}
                                             </div>
                                         </div>
                                     </div>

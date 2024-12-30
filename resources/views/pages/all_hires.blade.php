@@ -30,7 +30,7 @@
 		<div class=" my-4 my-lg-5">
 			<div class="col">
 
-				@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == 'cjzarsuelo@megawide.com.ph')
+				@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == 'cjzarsuelo@megawide.com.ph')
 
                 <button class="btn btn-primary fables-btn-rounded btn-sm" type="button" data-toggle="modal" data-target="#addNewHire">Add New Hire</button>
 				<br>
@@ -49,7 +49,7 @@
 								<h5><a href="#" class="font-20 semi-font fables-forth-text-color fables-second-hover-color team-name">{{$newHiresData->name}}</a></h5>
 								<p class="font-13 fables-forth-text-color my-1">{{$newHiresData->position}} </p> 
 
-								@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == 'cjzarsuelo@megawide.com.ph')
+								@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == 'cjzarsuelo@megawide.com.ph')
 								<ul class="nav fables-team-social-links"> 
 			                        {{-- <li><a href="#" target="_blank"><span class="fables-forth-text-color fables-fifth-border-color fables-team-social-icon">Edit</span></a></li>  |  --}}
 			                        <li><span class="fables-forth-text-color fables-fifth-border-color " data-toggle="modal" data-target="#deleteHireModal" onclick ="deleteHire({{ $newHiresData->id }})">Delete</span></li>   

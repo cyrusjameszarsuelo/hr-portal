@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Blog_Images;
 use App\Models\Blog_Comments;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class BlogController extends Controller
 {
@@ -19,10 +19,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $blog = Blog::orderBy('created_at', 'DESC')->get();
-        $blogName = Blog::where('blog_name', $user['contacts']['displayName'])->first();
+        $blogName = Blog::where('blog_name', $user['displayName'])->first();
 
         return view('pages.all_blogs')
             ->withBlog($blog)
@@ -82,7 +82,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $blog = new Blog;
 
@@ -90,7 +90,7 @@ class BlogController extends Controller
         $blog->content_type_id = 5;
         $blog->content = $request->content;
         $blog->subject = $request->subject;
-        $blog->blog_name = $user['contacts']['displayName'];
+        $blog->blog_name = $user['displayName'];
 
         $blog->save();
 

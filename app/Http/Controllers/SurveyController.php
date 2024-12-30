@@ -6,7 +6,7 @@ use App\Models\Survey;
 use App\Models\Choices;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class SurveyController extends Controller
 {
@@ -19,7 +19,7 @@ class SurveyController extends Controller
     {
         $survey = Survey::all();
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $counter = 0;
         $countAll = 0;

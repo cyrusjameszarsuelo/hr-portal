@@ -6,7 +6,7 @@ use App\Models\Meganews;
 use App\Models\Meganews_Image;
 use App\Models\Megatrivia;
 use Illuminate\Http\Request;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 ini_set('max_execution_time', 999);
 ini_set('upload_max_filesize', 999);
@@ -109,7 +109,7 @@ class MeganewsController extends Controller
 
     //     // return redirect()->route('pages.main')->with([ 'id' => $id ]);
 
-    //     $user = MsGraph::contacts()->get();
+    //     $user = MsGraph::get('me');
 
     //     $meganews = Meganews::orderBy('created_at', 'DESC')->get();
 

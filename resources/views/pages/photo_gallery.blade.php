@@ -61,7 +61,7 @@
 						<img src="{{$photoData->image}}" alt="image">
 						<div class="img-filter-overlay fables-main-color-transparent row m-0">
 
-							@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == '@megawide.com.ph')
+							@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == '@megawide.com.ph')
 							<form action="/deletePhoto/{{$photoData->id}}" method="POST">
 								@csrf
 								<button type="submit" class="gallery-filter-icon white-color fables-second-hover-color"><i class="fa fa-trash"></i></button>

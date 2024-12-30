@@ -6,7 +6,7 @@ use Intervention\Image\Facades\Image;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Community_Board;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class CommunityController extends Controller
 {
@@ -39,7 +39,7 @@ class CommunityController extends Controller
     public function store(Request $request)
     {
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $community = new Community_Board;
 
@@ -66,7 +66,7 @@ class CommunityController extends Controller
         $community->content = $request->content;
         $community->link = $request->link;
         $community->image = $filename;
-        $community->user_name = $user['contacts']['displayName'];
+        $community->user_name = $user['displayName'];
         $community->created_by = 1;
         $community->updated_by = 1;
 

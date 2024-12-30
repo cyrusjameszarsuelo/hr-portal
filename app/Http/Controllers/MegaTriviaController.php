@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MegaTrivia;
 use App\Models\MegaTrivia_Answer;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 ini_set('max_execution_time', 999);
 ini_set('upload_max_filesize', 999);
@@ -28,12 +28,12 @@ class MegaTriviaController extends Controller
 
     public function megatrivia()
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $megatrivia = Megatrivia::where('active', 1)->first();
 
         if($megatrivia) {
-            $megatriviaAnswerUser = MegaTrivia_Answer::where('user_answer', $user['contacts']['mail'])
+            $megatriviaAnswerUser = MegaTrivia_Answer::where('user_answer', $user['mail'])
                 ->where('megatrivia_id', $megatrivia->id)
                 ->first();
 

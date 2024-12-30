@@ -7,7 +7,7 @@ use App\Models\Timeline_Comments;
 use App\Models\Timeline_History;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 
 class TimelineController extends Controller
@@ -20,11 +20,11 @@ class TimelineController extends Controller
     public function index()
     {
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $timeline = Timeline::orderBy('created_at', 'DESC')->paginate(5);
         $timelineHistory = Timeline_History::with(['timeline'])->orderBy('created_at', 'DESC')->take(10)->get();
-        $forumName = Timeline::where('name', $user['contacts']['displayName'])->first();
+        $forumName = Timeline::where('name', $user['displayName'])->first();
 
 
         return view('pages.all_forums')
@@ -40,12 +40,12 @@ class TimelineController extends Controller
      */
     public function create(Request $request)
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $timeline_comments = new Timeline_Comments;
 
         $timeline_comments->timeline_id = $request->timeline_id;
-        $timeline_comments->name = $user['contacts']['displayName'];
+        $timeline_comments->name = $user['displayName'];
         $timeline_comments->image = 'https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png';
         $timeline_comments->post = $request->post;
         $timeline_comments->post_type_id = 2;
@@ -56,7 +56,7 @@ class TimelineController extends Controller
 
         $timeline_history = new Timeline_History;
 
-        $timeline_history->name  =  $user['contacts']['displayName'];
+        $timeline_history->name  =  $user['displayName'];
         $timeline_history->image  =  'https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png';
         $timeline_history->action  =  'Comment Added';
         $timeline_history->timeline_id  =  $request->timeline_id;
@@ -78,12 +78,12 @@ class TimelineController extends Controller
     public function store(Request $request)
     {
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $timeline = new Timeline;
 
         $timeline->title = $request->title;
-        $timeline->name = $user['contacts']['displayName'];
+        $timeline->name = $user['displayName'];
         $timeline->image = 'https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png';
         $timeline->post = $request->post;
         $timeline->post_type_id = $request->post_type_id;
@@ -97,7 +97,7 @@ class TimelineController extends Controller
 
         $timeline_history = new Timeline_History;
 
-        $timeline_history->name  =  $user['contacts']['displayName'];
+        $timeline_history->name  =  $user['displayName'];
         $timeline_history->image  =  'https://iptc.org/wp-content/uploads/2018/05/avatar-anonymous-300x300.png';
         $timeline_history->action  =  'Added Post';
         $timeline_history->timeline_id  =  $id;

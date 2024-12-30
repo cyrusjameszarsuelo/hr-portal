@@ -31,7 +31,7 @@
 		<br>
 		<br>
 
-        @if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == 'cjzarsuelo@megawide.com.ph' || $user['contacts']['mail'] == 'jmsilvestre@megawide.com.ph' || $user['contacts']['mail'] == 'ktan@megawide.com.ph')
+        @if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == 'cjzarsuelo@megawide.com.ph' || $user['mail'] == 'jmsilvestre@megawide.com.ph' || $user['mail'] == 'ktan@megawide.com.ph')
 
 		<button class="btn btn-primary fables-btn-rounded btn-sm" type="button" data-toggle="modal" data-target="#exampleModal">Add Job</button>
 		<br>
@@ -50,7 +50,7 @@
 		                </div>
 		                
 		            </a>
-                    @if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == 'cjzarsuelo@megawide.com.ph' || $user['contacts']['mail'] == 'jmsilvestre@megawide.com.ph' || $user['contacts']['mail'] == 'ktan@megawide.com.ph')
+                    @if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == 'cjzarsuelo@megawide.com.ph' || $user['mail'] == 'jmsilvestre@megawide.com.ph' || $user['mail'] == 'ktan@megawide.com.ph')
                         <center>
                             <a class="btn fables-second-text-color underline fables-main-hover-text-color p-0 fables-main-hover-color" type="button" data-toggle="modal" data-target="#deleteAnnouncementModel" onclick ="deleteJobVacancies('{{ $jobVacanciesData->title }}', {{ $jobVacanciesData->id }})">Delete </a>
                         </center>

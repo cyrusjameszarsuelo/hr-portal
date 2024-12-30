@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Meganews;
 use App\Models\MegaGoodVibes;
 use App\Models\MegaTrivia;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 
 
 class MainController extends Controller
@@ -18,7 +18,7 @@ class MainController extends Controller
     public function index()
     {
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
         $meganews = Meganews::orderBy('created_at', 'DESC')->first();
         $megaGoodVibes = MegaGoodVibes::orderBy('created_at', 'DESC')->first();
         $megaTrivia = MegaTrivia::orderBy('created_at', 'DESC')->first();

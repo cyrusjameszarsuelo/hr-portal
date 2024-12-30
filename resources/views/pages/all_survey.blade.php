@@ -5,7 +5,7 @@
 @section('content')
 <div class="container mt-5 mb-5">
 
-	@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph' || $user['contacts']['mail'] == 'cjzarsuelo@megawide.com.ph')
+	@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == 'cjzarsuelo@megawide.com.ph')
 	<a type="button" class="btn btn-primary fables-btn-rounded" href="{{url('/add-survey')}}">Add Survey</a>
 	<br>
 	<br>
@@ -50,7 +50,7 @@
 								<span class="fables-btn-value">View Results</span></button>
 								<br><br>
 
-								@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph')
+								@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph')
 
 
 								<a href="/edit-survey/{{$surveyData->id}}" type="button"> <i class="fa-regular fa-pen-to-square"></i> Edit</a> |

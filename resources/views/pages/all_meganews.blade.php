@@ -30,7 +30,7 @@
 		<div class="row my-4 my-lg-5">
 			<div class="col-12 col-lg-8">
 
-				@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph')
+				@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph')
 				<a type="button" class="btn btn-primary fables-btn-rounded" data-toggle="modal" data-target="#addMeganews" onclick='document.getElementById("manageMeganewsForm").reset();'>Add Meganews</a>
 				<br>
 				<br>
@@ -71,7 +71,7 @@
 								</p>
 								<a href="/content/{{$meganewsData->id}}" class="btn fables-second-text-color underline fables-main-hover-text-color p-0 fables-main-hover-color">Read More</a>
 
-								@if($user['contacts']['mail'] == 'tosma@megawide.com.ph' || $user['contacts']['mail'] == 'wmatias@megawide.com.ph')
+								@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph')
 
 								<a href="/editMeganews/{{$meganewsData->id}}" class="btn fables-second-text-color underline fables-main-hover-text-color p-0 fables-main-hover-color">Edit</a>
 								<a class="btn fables-second-text-color underline fables-main-hover-text-color p-0 fables-main-hover-color" type="button" data-toggle="modal" data-target="#deleteMeganewsModal" onclick ="deleteMeganews('{{ $meganewsData->title }}', {{ $meganewsData->id }})">Delete</a>

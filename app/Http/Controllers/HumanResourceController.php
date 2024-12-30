@@ -16,7 +16,7 @@ use App\Models\SurveyAnswer;
 use App\Models\Blog;
 use App\Models\User;
 use DB;
-use MsGraph;
+use Dcblogdev\MsGraph\Facades\MsGraph;
 use Auth;
 
 class HumanResourceController extends Controller
@@ -152,7 +152,7 @@ class HumanResourceController extends Controller
 
     public function view($id = null)
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $announcements = Announcements::query()
             ->with(['Content_Type'])
@@ -190,7 +190,7 @@ class HumanResourceController extends Controller
         $newHires = New_Hires::orderBy('created_at', 'DESC')
             ->get();
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
 
         return view('pages.all_hires')
@@ -228,7 +228,7 @@ class HumanResourceController extends Controller
         $jobVacancies = Job_Vacancies::orderBy('created_at', 'DESC')
             ->get();
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         return view('pages.job_vacancies')
             ->withUser($user)
@@ -261,7 +261,7 @@ class HumanResourceController extends Controller
 
     public function getHrWebsite($id, Request $request)
     {
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
         $title = ucfirst($request->segment(1));
         $hrWebsite = Hr_Website::query()
             ->when($id != null, function ($query) use ($id){
