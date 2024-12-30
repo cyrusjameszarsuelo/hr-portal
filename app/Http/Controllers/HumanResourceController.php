@@ -81,18 +81,18 @@ class HumanResourceController extends Controller
         //     ->get();
 
 
-        $user = MsGraph::contacts()->get();
+        $user = MsGraph::get('me');
 
         $timeline = Timeline::orderBy('created_at', 'DESC')->take(10)->get();
         $blog = Blog::orderBy('created_at', 'DESC')->take(4)->get();
         $survey = Survey::where('active', 1)->first();
         $community = Community_Board::orderBy('created_at', 'DESC')->get();
         $surveyName = SurveyAnswer::
-            where('survey_name', $user['contacts']['displayName'])
+            where('survey_name', $user['displayName'])
             ->where('survey_id', $survey->id)
             ->first();
-        $commName = Community_Board::where('user_name', $user['contacts']['displayName'])->first();
-        $forumName = Timeline::where('name', $user['contacts']['displayName'])->first();
+        $commName = Community_Board::where('user_name', $user['displayName'])->first();
+        $forumName = Timeline::where('name', $user['displayName'])->first();
 
         $jsImplode = '';
         $result_choices = array();
