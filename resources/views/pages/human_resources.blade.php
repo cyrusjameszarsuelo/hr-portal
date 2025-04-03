@@ -525,7 +525,7 @@
     <br>
     <li style="list-style: none;" class="ml-5">Total No. of Visitors:
         @if (
-            $user['mail'] == 'tosma@megawide.com.ph' ||
+            $user['mail'] == 'jbarte@megawide.com.ph' ||
                 $user['mail'] == 'wmatias@megawide.com.ph' ||
                 $user['mail'] == 'cjzarsuelo@megawide.com.ph')
             <a type="button" data-toggle="modal" data-target="#totalListOfUsers"
