@@ -7,9 +7,12 @@ use App\Models\Megagram;
 use App\Models\Megagram_Likes;
 use App\Models\Megagram_Comment;
 use Dcblogdev\MsGraph\Facades\MsGraph;
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 
 class MegagramController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -110,7 +113,7 @@ class MegagramController extends Controller
     {
         $megagram = new Megagram;
 
-        $image = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+        $image = $this->storeUpload($request->file('image'), 'megagram');
 
         $megagram->title = $request->title;
         $megagram->content = $request->content;
@@ -165,7 +168,7 @@ class MegagramController extends Controller
         $megagram = Megagram::find($id);
 
         if($request->file('image')) {
-            $image = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+            $image = $this->storeUpload($request->file('image'), 'megagram');
             $megagram->image = $image;
         }
 

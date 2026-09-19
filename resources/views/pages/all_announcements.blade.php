@@ -47,13 +47,13 @@
 								<div class="image-container zoomIn-effect">
 									@if(isset($announcementData->announcements_images->first()->image))
 										@if(stripos($announcementData->announcements_images->first()->image, '.pdf') !== FALSE)
-											<embed src="{{$announcementData->announcements_images->first()->image}}" width="100%" style="height: 30vw;" />
+											<embed src="{{section_asset($announcementData->announcements_images->first()->image, 'announcements')}}" width="100%" style="height: 30vw;" />
 												{{-- <a href="#" target=”_blank”>{{$announcementData->announcements_images->first()->image}}</a> --}}
 										@else
 
 										<a href="#"><img src="
 
-												{{asset($announcementData->announcements_images->first()->image )}}
+												{{section_asset($announcementData->announcements_images->first()->image, 'announcements')}}
 											" alt="image alt text"></a>
 										@endif
 									@endif
@@ -110,7 +110,7 @@
 									<a href="#"><img src="
 										@if(isset($allAnnouncementsData->announcements_images->first()->image))
 
-											{{asset($allAnnouncementsData->announcements_images->first()->image)}}
+											{{section_asset($allAnnouncementsData->announcements_images->first()->image, 'announcements')}}
 
 										@else 
 

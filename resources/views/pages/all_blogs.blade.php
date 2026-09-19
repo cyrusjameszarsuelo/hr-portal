@@ -43,7 +43,7 @@
 									<a href="/blog-details/{{$blogData->id}}"><img src=" 
 									@if($blogData->blog_images->first() != null)
 
-										{{asset('img/blogs/'. $blogData->blog_images->first()->image )}}
+										{{section_asset($blogData->blog_images->first()->image, 'blogs')}}
 
 									@else 
 
@@ -106,7 +106,7 @@
 										<a href="/blog-details/{{$blogData->id}}"><img src=" 
 										@if($blogData->blog_images->first() != null)
 
-											{{asset('img/blogs/'. $blogData->blog_images->first()->image )}}
+											{{section_asset($blogData->blog_images->first()->image, 'blogs')}}
 
 										@else 
 

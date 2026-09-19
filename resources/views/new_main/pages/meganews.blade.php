@@ -73,7 +73,7 @@
 					@endphp
 						<div class="{{$col}}">
 							<div class="position-relative overflow-hidden" style="height: 300px;">
-								<img class="img-fluid" src="{{ $meganewsData->meganews_image->first() ? $meganewsData->meganews_image->first()->image : '' }}" style="object-fit: cover; width: 100% !important; height: 100%;">
+								<img class="img-fluid" src="{{ $meganewsData->meganews_image->first() ? section_asset($meganewsData->meganews_image->first()->image, 'meganews') : '' }}" style="object-fit: cover; width: 100% !important; height: 100%;">
 								<div class="overlay">
 									<a class="h5 m-0 text-white" href="/meganews/{{$meganewsData->id}}">{{ $meganewsData->title }}</a>
 								</div>

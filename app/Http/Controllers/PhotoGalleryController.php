@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Photo_Gallery;
 use Dcblogdev\MsGraph\Facades\MsGraph;
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 
 class PhotoGalleryController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -48,7 +51,7 @@ class PhotoGalleryController extends Controller
 
             foreach (request()->image as $key => $image) {
 
-                $filename = cloudinary()->upload($image->getRealPath())->getSecurePath();
+                $filename = $this->storeUpload($image, 'photo_gallery');
 
                 $photo_gallery = new Photo_Gallery;
 

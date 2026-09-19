@@ -18,7 +18,7 @@
 				<br>
 				<br>
 				<div class="row">
-					<img src="{{$corporateOffice ? $corporateOffice->organizational_structure : ''}}" width="100%" alt="">
+					<img src="{{$corporateOffice ? section_asset($corporateOffice->organizational_structure, 'corporate_office') : ''}}" width="100%" alt="">
 				</div>
 
 				<div class="row mt-3">

@@ -43,7 +43,7 @@
 					<div class="col-6 col-md-4 mb-4 wow bounceInDown" data-wow-delay=".{{$key}}s" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.{{$key}}s; animation-name: bounceInDown;">
 						<div class="card fables-team-block fables-second-hover-text-color fables-team-border fables-second-border-color">
 							<div class="image-container shine-effect">
-								<a href="#"><img class="w-100" src="{{asset($newHiresData->image)}}" alt="Card image cap"></a> 
+								<a href="#"><img class="w-100" src="{{section_asset($newHiresData->image, 'human_resources')}}" alt="Card image cap"></a> 
 							</div>
 							<div class="card-body">
 								<h5><a href="#" class="font-20 semi-font fables-forth-text-color fables-second-hover-color team-name">{{$newHiresData->name}}</a></h5>

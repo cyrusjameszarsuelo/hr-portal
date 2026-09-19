@@ -37,11 +37,11 @@
                                                     @if(stripos($communityData->image, 'mp4') !== FALSE)
                                                     <div class="front filter-img-block position-relative">
                                                         <video width="320" height="240" >
-                                                          <source src="{{$communityData->image}}" type="video/mp4">
+                                                          <source src="{{section_asset($communityData->image, 'community_board')}}" type="video/mp4">
                                                         </video>
                                                     </div>
                                                     @else
-                                                    <div class="front filter-img-block position-relative" style="background-image: url('{{$communityData->image}}'); background-position: top !important">
+                                                    <div class="front filter-img-block position-relative" style="background-image: url('{{section_asset($communityData->image, 'community_board')}}'); background-position: top !important">
                                                     </div>
                                                     @endif
 

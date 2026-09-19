@@ -27,7 +27,7 @@
 					<div class="col-md-6">
 						@if(count($meganews->meganews_image) < 3)
 							@foreach($meganews->meganews_image as $imageData)
-								<img src="{{$imageData->image}}" alt="" style="width: 100%; margin-bottom: 2vw">
+								<img src="{{section_asset($imageData->image, 'meganews')}}" alt="" style="width: 100%; margin-bottom: 2vw">
 							@endforeach
 						@else
 							<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -39,7 +39,7 @@
 								<div class="carousel-inner">
 									@foreach($meganews->meganews_image as $key => $imageData)
 									<div class="carousel-item {{$key == 0 ? 'active' : ''}}">
-										<img src="{{$imageData->image}}" alt="" style="width: 100%; margin-bottom: 2vw">
+										<img src="{{section_asset($imageData->image, 'meganews')}}" alt="" style="width: 100%; margin-bottom: 2vw">
 									</div>
 
 									@endforeach

@@ -13,7 +13,7 @@
             <div class="col-md-4">
 
                 @foreach($howTo as $key => $howToData)
-                    <a class="fables-main-text-color font-16 bold-font fables-second-hover-color blog-smaller-head"><li class="howToName" data-src="{{$howToData->image}}">{{$howToData->name}}</li>
+                    <a class="fables-main-text-color font-16 bold-font fables-second-hover-color blog-smaller-head"><li class="howToName" data-src="{{section_asset($howToData->image, 'human_resources')}}">{{$howToData->name}}</li>
                     </a>
                     <hr>
                 @endforeach
@@ -24,9 +24,9 @@
 
                 <div class="position-relative mb-4"> 
                     @foreach($howTo as $key => $howToData)
-                    <a data-fancybox="how-tos" href="{{$howToData->image}}" {{$key != 0 ? 'hidden' : ''}} id="aImageView">
+                    <a data-fancybox="how-tos" href="{{section_asset($howToData->image, 'human_resources')}}" {{$key != 0 ? 'hidden' : ''}} id="aImageView">
                         <div class="image-container position-relative" id="imageView">
-                            <img src="{{$howToData->image}}" alt="" class="w-100">
+                            <img src="{{section_asset($howToData->image, 'human_resources')}}" alt="" class="w-100">
                         </div>
                         <div class="fables-blog-overlay text-white pl-2 pl-lg-4 pb-5"> 
                         </div>

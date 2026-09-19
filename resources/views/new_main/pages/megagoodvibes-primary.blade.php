@@ -43,7 +43,7 @@
 							@foreach($megagoodvibesAll as $key => $megagoodvibesData)
 							<div class="text-center"> 
 								<div class="image-container zoomOut-effect">
-									<a href="/mega-good-vibes/{{$megagoodvibesData->id}}"><img src="{{$megagoodvibesData->thumbnail}}" alt="" class="w-100"></a> 
+									<a href="/mega-good-vibes/{{$megagoodvibesData->id}}"><img src="{{section_asset($megagoodvibesData->thumbnail, 'megagoodvibes')}}" alt="" class="w-100"></a> 
 								</div> 
 								<h2 class="font-18 semi-font mt-3 mb-2"><a href="/mega-good-vibes/{{$megagoodvibesData->id}}" class="fables-main-text-color fables-second-hover-color">
 								{{ \Carbon\Carbon::parse($megagoodvibesData->created_at)->format('F d, Y') }}</a></h2>

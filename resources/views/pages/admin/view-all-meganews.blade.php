@@ -59,7 +59,7 @@
 			        								<tbody>
 			        									@foreach($meganews as $meganewsData)
 			        									<tr>
-			        										<td class="text-center" style="width: 17%"><img src="{{ ($meganewsData->meganews_image->first()) ? asset($meganewsData->meganews_image->first()->image) : '' }}" alt="" width="100%"></td>
+			        										<td class="text-center" style="width: 17%"><img src="{{ ($meganewsData->meganews_image->first()) ? section_asset($meganewsData->meganews_image->first()->image, 'meganews') : '' }}" alt="" width="100%"></td>
 			        										<td>{{$meganewsData->title}}</td>
 			        										<td>{!!$meganewsData->content!!}</td>
 			        										<td>{{$meganewsData->created_at}}</td>

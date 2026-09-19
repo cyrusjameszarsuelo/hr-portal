@@ -45,7 +45,7 @@
 
 										@if($meganewsData->image != null)
 
-											{{asset($meganewsData->image )}}
+											{{section_asset($meganewsData->image, 'meganews')}}
 
 										@else 
 
@@ -110,7 +110,7 @@
 										<a href="/content/{{$meganewsData->id}}"><img src=" 
 										@if($meganewsData->image != null)
 
-											{{asset($meganewsData->image )}}
+											{{section_asset($meganewsData->image, 'meganews')}}
 
 										@else 
 

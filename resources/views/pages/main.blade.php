@@ -106,7 +106,7 @@
             <div class="bg"></div>
 
             <div class="bg-meganews-img" hidden>
-                <img src="{{ $meganews ? $meganews->meganews_image->first()->image : 'asset("img/person-bg-bg.png"'}}" alt="">
+                <img src="{{ $meganews ? section_asset($meganews->meganews_image->first()->image, 'meganews') : 'asset("img/person-bg-bg.png"'}}" alt="">
             </div>
 
             <div class="highlights"></div>
@@ -719,7 +719,7 @@
 
             $(".meganews").hover(function(){
                 $(".bg").css("opacity", 0);
-                $(".bg").css("background","url({{ $meganews ? $meganews->meganews_image->first()->image : 'asset("img/person-bg-bg.png"'}})");
+                $(".bg").css("background","url({{ $meganews ? section_asset($meganews->meganews_image->first()->image, 'meganews') : 'asset("img/person-bg-bg.png"'}})");
                 $(".bg").animate({opacity: 1}, 2000);
                 $(".bg").css("background-position","center");
                 $(".bg").css("background-size","contain");
@@ -737,7 +737,7 @@
 
             $(".megagoodvibes").hover(function(){
                 $(".bg").css("opacity", 0);
-                $(".bg").css("background","url({{ $megaGoodVibes ? $megaGoodVibes->thumbnail : 'asset("img/person-bg-bg.png"'}})");
+                $(".bg").css("background","url({{ $megaGoodVibes ? section_asset($megaGoodVibes->thumbnail, 'megagoodvibes') : 'asset("img/person-bg-bg.png"'}})");
                 $(".bg").animate({opacity: 1}, 2000);
                 $(".bg").css("background-position","center");
                 $(".bg").css("background-size","contain");
@@ -755,7 +755,7 @@
 
             $(".megatrivia").hover(function(){
                 $(".bg").css("opacity", 0);
-                $(".bg").css("background","url({{ $megaTrivia ? $megaTrivia->image : 'asset("img/person-bg-bg.png"'}})");
+                $(".bg").css("background","url({{ $megaTrivia ? section_asset($megaTrivia->image, 'megatrivia') : 'asset("img/person-bg-bg.png"'}})");
                 $(".bg").animate({opacity: 1}, 2000);
                 $(".bg").css("background-position","center");
                 $(".bg").css("background-size","contain");

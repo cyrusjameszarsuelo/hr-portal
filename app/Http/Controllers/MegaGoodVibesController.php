@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 use App\Models\MegaGoodVibes;
 use App\Models\Megagoodvibes_Likes;
 use App\Models\Megagoodvibes_Comments;
@@ -16,6 +17,8 @@ ini_set('post_max_size', 9999);
 
 class MegaGoodVibesController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -126,17 +129,9 @@ class MegaGoodVibesController extends Controller
 
         $megaGoodVibes->content = $request->content;
 
-        if ($request->hasFile('file')) {
+        $filename = $request->hasFile('file') ? $this->storeUpload($request->file('file'), 'megagoodvibes', 'videos') : '';
 
-            $filename = cloudinary()->uploadVideo($request->file('file')->getRealPath(), [
-            'folder' => 'videos'
-            ])->getSecurePath();
-
-        } else {
-            $filename = '';
-        }
-
-        $thumbnail = cloudinary()->upload($request->file('thumbnail')->getRealPath())->getSecurePath();
+        $thumbnail = $request->hasFile('thumbnail') ? $this->storeUpload($request->file('thumbnail'), 'megagoodvibes') : '';
 
 
         $megaGoodVibes->file = $filename;
@@ -185,9 +180,7 @@ class MegaGoodVibesController extends Controller
 
         if ($request->hasFile('file')) {
 
-            $filename = cloudinary()->uploadVideo($request->file('file')->getRealPath(), [
-            'folder' => 'videos'
-            ])->getSecurePath();
+            $filename = $this->storeUpload($request->file('file'), 'megagoodvibes', 'videos');
 
 
             $megaGoodVibes->file = $filename;
@@ -196,7 +189,7 @@ class MegaGoodVibesController extends Controller
 
         if ($request->hasFile('thumbnail')) {
 
-            $thumbnail = cloudinary()->upload($request->file('thumbnail')->getRealPath())->getSecurePath();
+            $thumbnail = $this->storeUpload($request->file('thumbnail'), 'megagoodvibes');
 
             $megaGoodVibes->thumbnail = $thumbnail;
 

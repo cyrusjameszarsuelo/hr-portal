@@ -59,7 +59,7 @@
 			        									@if(isset($blog))
 			        									@foreach($blog as $blogData)
 			        									<tr>
-			        										<td class="text-center"><img src="{{isset($blogData->blog_images[0]) ? asset('img/blogs/'.$blogData->blog_images[0]->image) : ''}}" alt="" width="50%"></td>
+			        										<td class="text-center"><img src="{{isset($blogData->blog_images[0]) ? section_asset($blogData->blog_images[0]->image, 'blogs') : ''}}" alt="" width="50%"></td>
 			        										<td>{{$blogData->blog_title}}</td>
 			        										<td>{{ str_limit($blogData->content, 100, '...')}}</td>
 			        										<td>{{$blogData->subject}}</td>

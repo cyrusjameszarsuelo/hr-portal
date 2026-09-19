@@ -60,7 +60,7 @@
 			        								<tbody>
 			        									@foreach($megagram as $megagramData)
 			        										<tr>
-			        											<td class="text-center"><img src="{{ asset($megagramData->image) }}" alt="" width="50%"></td>
+			        											<td class="text-center"><img src="{{ section_asset($megagramData->image, 'megagram') }}" alt="" width="50%"></td>
 			        											<td>{{$megagramData->title}}</td>
 			        											<td>{!!$megagramData->content!!}</td>
 			        											<td>{{$megagramData->active == 1 ? 'Active' : 'Inactive' }}</td>

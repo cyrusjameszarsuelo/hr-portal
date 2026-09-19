@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 use App\Models\Meganews;
 use App\Models\Meganews_Image;
 use App\Models\Megatrivia;
@@ -14,6 +15,8 @@ ini_set('post_max_size', 999);
 
 class MeganewsController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -148,7 +151,7 @@ class MeganewsController extends Controller
 
             foreach (request()->image as $key => $image) {
 
-                $filename = cloudinary()->upload($image->getRealPath())->getSecurePath();
+                $filename = $this->storeUpload($image, 'meganews');
 
                 $meganews_image = new Meganews_Image;
 
@@ -234,7 +237,7 @@ class MeganewsController extends Controller
 
             foreach (request()->image as $key => $image) {
 
-                $filename = cloudinary()->upload($image->getRealPath())->getSecurePath();
+                $filename = $this->storeUpload($image, 'meganews');
 
                 $meganews_image = new Meganews_Image;
 

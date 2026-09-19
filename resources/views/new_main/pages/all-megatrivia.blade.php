@@ -15,7 +15,7 @@
 					@foreach($megatrivia as $megatriviaData)
 						<div class="col-12 col-md-4 mb-4 mb-md-5 wow fadeIn" data-wow-delay=".6s">  
 							<div class="image-container zoomIn-effect">
-								<a href="#"><img src="{{$megatriviaData->image}}" alt=""></a> 
+								<a href="#"><img src="{{section_asset($megatriviaData->image, 'megatrivia')}}" alt=""></a> 
 							</div>
 
 							<div class="above-date py-2 py-lg-3 fables-fifth-text-color float-left w-100 d-md-none d-lg-block">

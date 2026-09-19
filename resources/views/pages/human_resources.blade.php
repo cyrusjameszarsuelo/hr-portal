@@ -64,11 +64,11 @@
                         <div class="text-center position-relative mb-3 mb-lg-0">
                             <div class="position-relative overflow-hidden" style="height: 600px;">
                                 @if (stripos($generalAnnouncement->announcements_images->first()->image, '.pdf') !== false)
-                                    <embed src="{{ $generalAnnouncement->announcements_images->first()->image }}"
+                                    <embed src="{{ section_asset($generalAnnouncement->announcements_images->first()->image, 'announcements') }}"
                                         width="100%" style="height: 35vw;" />
                                 @else
                                     <img class="img-fluid h-100"
-                                        src="{{ $generalAnnouncement->announcements_images->first()->image }}"
+                                        src="{{ section_asset($generalAnnouncement->announcements_images->first()->image, 'announcements') }}"
                                         style="object-fit: cover;">
                                     <div class="overlay ">
                                         <div class="mb-1">
@@ -93,7 +93,7 @@
                                 <div class="image-container zoomIn-effect position-relative"
                                     style="width: 100%; height: 100px;">
                                     @if ($generalAnnouncementAllData->announcements_images->first())
-                                        <img src="{{ asset($generalAnnouncementAllData->announcements_images->first()->image) }}"
+                                        <img src="{{ section_asset($generalAnnouncementAllData->announcements_images->first()->image, 'announcements') }}"
                                             alt="" class="w-100">
                                     @else
                                         <div class="text-light d-flex justify-content-center align-items-center"
@@ -153,7 +153,7 @@
                             <div class="owl-carousel owl-carousel-2 carousel-item-1 position-relative">
                                 @foreach ($newHires as $newHiresData)
                                     <div class="position-relative overflow-hidden" style="height: 400px;">
-                                        <img class="img-fluid w-100 h-100" src="{{ $newHiresData->image }}"
+                                        <img class="img-fluid w-100 h-100" src="{{ section_asset($newHiresData->image, 'human_resources') }}"
                                             style="object-fit: cover;">
                                         <div class="overlay">
                                             <div class="mb-1" style="font-size: 13px;">
@@ -194,7 +194,7 @@
                             @if ($memorandum)
                                 <div class="position-relative overflow-hidden" style="height: 300px;">
                                     <img class="img-fluid w-100"
-                                        src="{{ $memorandum->announcements_images->first()->image }}"
+                                        src="{{ section_asset($memorandum->announcements_images->first()->image, 'announcements') }}"
                                         style="object-fit: cover;">
                                     <div class="overlay">
                                         <div class="mb-1" style="font-size: 13px; font-weight: 500;">
@@ -221,7 +221,7 @@
                             @if ($hmoAnnouncement)
                                 <div class="position-relative overflow-hidden" style="height: 300px;">
                                     <img class="img-fluid w-100"
-                                        src="{{ $hmoAnnouncement->announcements_images ? $hmoAnnouncement->announcements_images->first()->image : '' }}"
+                                        src="{{ $hmoAnnouncement->announcements_images ? section_asset($hmoAnnouncement->announcements_images->first()->image, 'announcements') : '' }}"
                                         style="object-fit: cover;">
                                     <div class="overlay">
                                         <div class="mb-1" style="font-size: 13px; font-weight: 500;">
@@ -327,9 +327,9 @@
                 <div class="card" style="box-shadow: 6px 4px 12px; border-radius: 3px;">
                     <div class="container">
                         <div class="position-relative mb-4 mt-4">
-                            <a data-fancybox="demographics" href="{{ $demographics ? $demographics->image : '' }}">
+                            <a data-fancybox="demographics" href="{{ $demographics ? section_asset($demographics->image, 'human_resources') : '' }}">
                                 <div class="image-container position-relative">
-                                    <img src="{{ $demographics ? $demographics->image : '' }}" alt=""
+                                    <img src="{{ $demographics ? section_asset($demographics->image, 'human_resources') : '' }}" alt=""
                                         class="w-100" style="height: 52vw">
                                 </div>
                                 <div class="fables-blog-overlay text-white pl-2 pl-lg-4 pb-5">

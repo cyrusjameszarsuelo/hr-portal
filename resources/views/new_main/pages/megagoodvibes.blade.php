@@ -20,9 +20,9 @@
 	            <div class="row">
 	                <div class="col-lg-8">
 	                    <div class="position-relative" style="z-index: 3;"> 
-                              <img src="{{$megagoodvibes->thumbnail}}" alt="" class="w-100">
+                              <img src="{{section_asset($megagoodvibes->thumbnail, 'megagoodvibes')}}" alt="" class="w-100">
                               <div class="demo-gallery-poster fables-main-gradient">
-                                <a data-fancybox href="{{$megagoodvibes->file}}">
+                                <a data-fancybox href="{{section_asset($megagoodvibes->file, 'megagoodvibes', 'videos')}}">
                                    <img src="{{ asset ('assets/custom/images/play-button.png')}}" alt="play button" class="img-fluid">
                                </a> 
                              </div> 
@@ -103,7 +103,7 @@
 							@foreach($megagoodvibesAll as $key => $megagoodvibesData)
     							{{-- @if($key != 0) --}}
 			                        <div class="d-flex mb-3">
-			                            <img src="{{$megagoodvibesData->thumbnail}}" style="width: 100px; height: 100px; object-fit: cover;">
+			                            <img src="{{section_asset($megagoodvibesData->thumbnail, 'megagoodvibes')}}" style="width: 100px; height: 100px; object-fit: cover;">
 			                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
 			                                <div class="mb-1" style="font-size: 13px;">
 			                                    <span>{{ \Carbon\Carbon::parse($megagoodvibesData->created_at)->format('F d, Y') }}</span>

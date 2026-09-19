@@ -44,9 +44,9 @@
 			@foreach($jobVacancies as $jobVacanciesData)
 		    <div class="col-4">
 		        <div class="position-relative mb-4"> 
-		            <a data-fancybox="job-vacancies" id="job-vacancies" href="{{asset($jobVacanciesData->image)}}" >
+		            <a data-fancybox="job-vacancies" id="job-vacancies" href="{{section_asset($jobVacanciesData->image, 'human_resources')}}" >
 		                <div class="image-container position-relative">
-		                    <img src="{{asset($jobVacanciesData->image)}}" alt="" class="w-100">
+		                    <img src="{{section_asset($jobVacanciesData->image, 'human_resources')}}" alt="" class="w-100">
 		                </div>
 		                
 		            </a>

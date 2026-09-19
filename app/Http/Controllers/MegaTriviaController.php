@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MegaTrivia;
 use App\Models\MegaTrivia_Answer;
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 use Dcblogdev\MsGraph\Facades\MsGraph;
 
 ini_set('max_execution_time', 999);
@@ -13,6 +14,8 @@ ini_set('post_max_size', 999);
 
 class MegaTriviaController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -110,7 +113,7 @@ class MegaTriviaController extends Controller
 
         $megatrivia = new MegaTrivia;
 
-        $image = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+        $image = $this->storeUpload($request->file('image'), 'megatrivia');
 
         $megatrivia->title = $request->title;
         $megatrivia->image = $image;
@@ -166,7 +169,7 @@ class MegaTriviaController extends Controller
         $megatrivia = MegaTrivia::find($id);
 
         if($request->file('image')) {
-            $image = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+            $image = $this->storeUpload($request->file('image'), 'megatrivia');
             $megatrivia->image = $image;
         }
 

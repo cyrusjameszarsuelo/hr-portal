@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 use App\Models\Announcements;
 use App\Models\Content_Type;
 use App\Models\Hr_Website;
@@ -21,6 +22,8 @@ use Auth;
 
 class HumanResourceController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -204,7 +207,7 @@ class HumanResourceController extends Controller
 
         if ($request->hasFile('image')) {
 
-            $filename = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+            $filename = $this->storeUpload($request->file('image'), 'human_resources');
 
             // $filename = time().request()->image->getClientOriginalName();
             // request()->image->move(public_path('img/New Employee/'), $filename);
@@ -241,7 +244,7 @@ class HumanResourceController extends Controller
 
         if ($request->hasFile('image')) {
 
-            $filename = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
+            $filename = $this->storeUpload($request->file('image'), 'human_resources');
 
             // $filename = time().request()->image->getClientOriginalName();
             // request()->image->move(public_path('img/Job Vacancies/'), $filename);
@@ -287,14 +290,8 @@ class HumanResourceController extends Controller
         $hr_website = new Hr_Website;
 
         if ($request->hasFile('image')) {
-            if($request->file('image')->getMimeType() == 'video/mp4') {
 
-                $filename = cloudinary()->uploadVideo($request->file('image')->getRealPath())->getSecurePath();
-                
-            } else {
-
-                $filename = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
-            }
+            $filename = $this->storeUpload($request->file('image'), 'human_resources');
 
             // $filename = time().request()->image->getClientOriginalName();
             // request()->image->move(public_path('img/community_board/'), $filename);
@@ -343,7 +340,7 @@ class HumanResourceController extends Controller
 
             foreach (request()->image as $key => $image) {
 
-                $filename = cloudinary()->upload($image->getRealPath())->getSecurePath();
+                $filename = $this->storeUpload($image, 'announcements');
 
 
                 // $filename = time().$image->getClientOriginalName();
@@ -407,7 +404,7 @@ class HumanResourceController extends Controller
 
             foreach (request()->image as $key => $image) {
 
-                $filename = cloudinary()->upload($image->getRealPath())->getSecurePath();
+                $filename = $this->storeUpload($image, 'announcements');
 
                 $announcements_images = new Announcements_Images;
 

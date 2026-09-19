@@ -28,7 +28,7 @@
     <!-- Start page content --> 
     <div class="container"> 
         <div class="my-4 my-lg-4"> 
-            <img src="{{ asset ($meganewsSingleContent->image)}}" alt="" class="w-100">
+            <img src="{{ section_asset($meganewsSingleContent->image, 'meganews')}}" alt="" class="w-100">
             <br>
             <br>
             <h2 class="font-23 semi-font"><a href="#" class="fables-main-text-color fables-second-hover-color">{{ $meganewsSingleContent->title }}</a></h2>
@@ -76,7 +76,7 @@
             @if(count($meganewsSingleContent->meganews_image) > 1)
                 @foreach($meganewsSingleContent->meganews_image as $mega_image)
                     <div class="position-relative overflow-hidden img-contain image-container zoomIn-effect" style="height: 435px;">
-                        <img class="img-fluid h-100" src="{{ $mega_image->image}}" style="object-fit: cover;">
+                        <img class="img-fluid h-100" src="{{ section_asset($mega_image->image, 'meganews')}}" style="object-fit: cover;">
                         <div class="">
                             <div class="mb-1">
                                 <a class="text-white" href=""></a>
@@ -99,9 +99,9 @@
                 <div class="img-contain image-container zoomIn-effect">
                     <a href="">
                         @if(count($meganewsSingleContent->meganews_image) > 0)
-                        <img src="{{ $meganewsSingleContent->meganews_image[0]->image}}" alt="" class="w-100">
+                        <img src="{{ section_asset($meganewsSingleContent->meganews_image[0]->image, 'meganews')}}" alt="" class="w-100">
                         @else
-                        <img src="{{ $meganewsSingleContent->image }}" alt="" class="w-100">
+                        <img src="{{ section_asset($meganewsSingleContent->image, 'meganews') }}" alt="" class="w-100">
                         @endif
                     </a>
                 </div>
@@ -135,7 +135,7 @@
 
                     <div> 
                         <div class="image-container zoomIn-effect">
-                            <a href="#"><img src="{{ $meganewsData->image}}" alt="" class="w-100"></a> 
+                            <a href="#"><img src="{{ section_asset($meganewsData->image, 'meganews')}}" alt="" class="w-100"></a> 
                         </div>
 
                         <div class="fables-forth-text-color font-14  my-2">                                  

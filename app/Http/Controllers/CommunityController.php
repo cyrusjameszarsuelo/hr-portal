@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Intervention\Image\Facades\Image;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 use Illuminate\Http\Request;
 use App\Models\Community_Board;
 use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class CommunityController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -44,23 +47,9 @@ class CommunityController extends Controller
         $community = new Community_Board;
 
 
-        if ($request->hasFile('image')) {
-            if($request->file('image')->getMimeType() == 'video/mp4') {
-
-                $filename = cloudinary()->uploadVideo($request->file('image')->getRealPath())->getSecurePath();
-                
-            } else {
-
-                $filename = cloudinary()->upload($request->file('image')->getRealPath())->getSecurePath();
-            }
-
-            // $filename = time().request()->image->getClientOriginalName();
-            // request()->image->move(public_path('img/community_board/'), $filename);
-
-            
-        } else {
-            $filename = '';
-        }
+        $filename = $request->hasFile('image')
+            ? $this->storeUpload($request->file('image'), 'community_board')
+            : '';
 
         $community->title = $request->title;
         $community->content = $request->content;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Intervention\Image\Facades\Image;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Blog_Images;
@@ -12,6 +13,8 @@ use Dcblogdev\MsGraph\Facades\MsGraph;
 
 class BlogController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -100,7 +103,7 @@ class BlogController extends Controller
 
             foreach (request()->image as $key => $imageData) {
 
-                $filename = cloudinary()->upload($imageData->getRealPath())->getSecurePath();
+                $filename = $this->storeUpload($imageData, 'blogs');
 
                 // $filename = time().$imageData->getClientOriginalName();
                 // $imageData->move(public_path('img/blogs/'), $filename);

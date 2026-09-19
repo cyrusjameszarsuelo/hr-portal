@@ -60,7 +60,7 @@
 			        									@foreach($megaGoodVibes as $megaGoodVibesData)
 			        									<tr>
 			        										<td>{{$megaGoodVibesData->id}}</td>
-			        										<td width="10%"><video src="{{$megaGoodVibesData->file}}" width="100%"></video></td>
+			        										<td width="10%"><video src="{{section_asset($megaGoodVibesData->file, 'megagoodvibes', 'videos')}}" width="100%"></video></td>
 			        										<td>{!!$megaGoodVibesData->content!!}</td>
 			        										<td>{{$megaGoodVibesData->created_at}}</td>
 			        										<td>

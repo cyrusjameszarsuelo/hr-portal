@@ -12,7 +12,7 @@
 					@foreach($blog->blog_images as $blog_imagesData)
 						<div>
 							<a href="#">
-								<img src="{{$blog_imagesData->image}}" alt="" class="w-100">
+								<img src="{{section_asset($blog_imagesData->image, 'blogs')}}" alt="" class="w-100">
 							</a>
 						</div>  
 					@endforeach
@@ -134,7 +134,7 @@
 							<a href="{{url('/blog-details/'.$listOfBlogData->id)}}"><img src=" 
 								@if($listOfBlogData->blog_images->first() != null)
 
-									{{$listOfBlogData->blog_images->first()->image}}
+									{{section_asset($listOfBlogData->blog_images->first()->image, 'blogs')}}
 
 								@else 
 

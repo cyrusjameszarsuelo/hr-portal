@@ -15,7 +15,7 @@
 
                 @foreach($megawideUniversity as $key => $megawideUniversityData)
                     @if($key < 10)
-                    <a {{-- href="{{asset($megawideUniversityData->image)}}" target="_blank" --}} class="fables-main-text-color font-16 bold-font fables-second-hover-color blog-smaller-head"><li class="MuName" data-src="{{$megawideUniversityData->image}}">{{$megawideUniversityData->name}}</li>
+                    <a {{-- href="{{asset($megawideUniversityData->image)}}" target="_blank" --}} class="fables-main-text-color font-16 bold-font fables-second-hover-color blog-smaller-head"><li class="MuName" data-src="{{section_asset($megawideUniversityData->image, 'human_resources')}}">{{$megawideUniversityData->name}}</li>
                     </a>
                     <hr>
                     @endif
@@ -26,10 +26,10 @@
             <div class="col-md-8">
 
                 <div class="position-relative mb-4" id="embedFile"> 
-                    <embed src="{{ $megawideUniversity->first() ? $megawideUniversity->first()->image : ''}}" width="100%" style="height: 35vw;" />
+                    <embed src="{{ $megawideUniversity->first() ? section_asset($megawideUniversity->first()->image, 'human_resources') : ''}}" width="100%" style="height: 35vw;" />
                     <br>
                     <br>
-                    <a href="{{ $megawideUniversity->first() ? $megawideUniversity->first()->image : ''}}" target="_blank" class="text-white">
+                    <a href="{{ $megawideUniversity->first() ? section_asset($megawideUniversity->first()->image, 'human_resources') : ''}}" target="_blank" class="text-white">
                     <button class="btn btn-primary btn-block fables-btn-rounded">View in New Tab</button>
                     </a>
                 </div>

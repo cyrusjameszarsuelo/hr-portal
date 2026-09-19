@@ -58,7 +58,7 @@
 				@foreach($photos as $photoData)
 				<div class="drawings places col-sm-6 col-md-3">
 					<div class="filter-img-block position-relative mb-3 image-container translate-effect-right" style="border: 2px solid #ee3124">
-						<img src="{{$photoData->image}}" alt="image">
+						<img src="{{section_asset($photoData->image, 'photo_gallery')}}" alt="image">
 						<div class="img-filter-overlay fables-main-color-transparent row m-0">
 
 							@if($user['mail'] == 'tosma@megawide.com.ph' || $user['mail'] == 'wmatias@megawide.com.ph' || $user['mail'] == '@megawide.com.ph')
@@ -68,7 +68,7 @@
 							</form>
 							
 							@endif
-							<a data-fancybox="gallery" href="{{$photoData->image}}" class="gallery-filter-icon white-color fables-second-hover-color"><span class="fables-iconsearch-icon"></span></a>
+							<a data-fancybox="gallery" href="{{section_asset($photoData->image, 'photo_gallery')}}" class="gallery-filter-icon white-color fables-second-hover-color"><span class="fables-iconsearch-icon"></span></a>
 						</div>
 					</div>
 				</div>

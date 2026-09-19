@@ -18,7 +18,7 @@
 	<div class="row m-0 p-0">
 		<div class="col-7 m-0 p-0 mb-5">
 			@if($megatrivia)
-				<img src="{{$megatrivia->image}}" class="megatrivia-image" alt="business">
+				<img src="{{section_asset($megatrivia->image, 'megatrivia')}}" class="megatrivia-image" alt="business">
 			@endif
 			<br>
 			<br>

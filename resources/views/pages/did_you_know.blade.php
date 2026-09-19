@@ -12,29 +12,29 @@
             <div class="col-12" {{$key == 0 ?  : 'hidden'}}>
                 <div class="position-relative mb-4"> 
                     @if(stripos($didYouKnowData->image, 'mp4') !== FALSE)
-                        <a href="{{asset($didYouKnowData->image)}}" target="_blank">
+                        <a href="{{section_asset($didYouKnowData->image, 'human_resources')}}" target="_blank">
                             <div class="front filter-img-block position-relative">
                                 <video width="600" height="600" >
-                                  <source src="{{$didYouKnowData->image}}" type="video/mp4">
+                                  <source src="{{section_asset($didYouKnowData->image, 'human_resources')}}" type="video/mp4">
                                 </video>
                             </div>
                         </a>
                     @elseif(substr($didYouKnowData->image, -3) == 'pdf')
 
                         <div class="position-relative mb-4" id="embedFile"> 
-                            <embed src="{{$didYouKnowData->image}}" width="100%" style="height: 35vw;" />
+                            <embed src="{{section_asset($didYouKnowData->image, 'human_resources')}}" width="100%" style="height: 35vw;" />
                             <br>
                             <br>
-                            <a href="{{$didYouKnowData->image}}" target="_blank">
+                            <a href="{{section_asset($didYouKnowData->image, 'human_resources')}}" target="_blank">
                                 <button class="btn btn-primary btn-block fables-btn-rounded">View in New Tab</button>
                             </a>
                         </div>
 
                     @else
 
-                    <a data-fancybox="did-you-know" id="did-you-know" href="{{$didYouKnowData->image}}" >
+                    <a data-fancybox="did-you-know" id="did-you-know" href="{{section_asset($didYouKnowData->image, 'human_resources')}}" >
                         <div class="image-container position-relative">
-                            <img src="{{$didYouKnowData->image}}" alt="" class="w-100">
+                            <img src="{{section_asset($didYouKnowData->image, 'human_resources')}}" alt="" class="w-100">
                         </div>
                         <div class="fables-blog-overlay text-white pl-2 pl-lg-4 pb-5"> 
                         </div>

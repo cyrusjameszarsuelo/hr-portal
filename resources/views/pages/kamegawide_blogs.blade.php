@@ -22,7 +22,7 @@
                                                 <a href="/blog-details/{{$blogData->id}}"><img src="
                                                     @if($blogData->blog_images->first() != null)
 
-                                                        {{$blogData->blog_images->first()->image}}
+                                                        {{section_asset($blogData->blog_images->first()->image, 'blogs')}}
 
                                                     @else 
 
@@ -68,7 +68,7 @@
                                         @if($key >= 1) 
                                         <div class="col-md-4">
                                             <div class="image-container zoomIn-effect position-relative" style="width: 75%; height: 80px;">
-                                                <a href="/blog-details/{{$blogData->id}}"><img src="{{isset($blogData->blog_images[0]->image) ? $blogData->blog_images[0]->image : asset('img/blogs/default-blog-image.jpg')}}" alt="" class="w-100"></a> 
+                                                <a href="/blog-details/{{$blogData->id}}"><img src="{{isset($blogData->blog_images[0]->image) ? section_asset($blogData->blog_images[0]->image, 'blogs') : asset('img/blogs/default-blog-image.jpg')}}" alt="" class="w-100"></a> 
                                             </div>
 
                                             <div class="fables-forth-text-color font-14  my-2">                                  

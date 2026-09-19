@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Concerns\HandlesFileUploads;
 use App\Models\Corporate_Office;
 use Illuminate\Http\Request;
 
 class CorporateOfficeController extends Controller
 {
+    use HandlesFileUploads;
+
     /**
      * Display a listing of the resource.
      *
@@ -54,11 +57,7 @@ class CorporateOfficeController extends Controller
     {
         $corporate_office = new Corporate_Office;
 
-        if ($request->hasFile('organizational_structure')) {
-            $filename = cloudinary()->upload(request()->organizational_structure->getRealPath())->getSecurePath();
-        } else {
-            $filename = '';
-        }
+        $filename = $request->hasFile('organizational_structure') ? $this->storeUpload($request->file('organizational_structure'), 'corporate_office') : '';
 
         $corporate_office->department = $request->department;
         $corporate_office->organizational_structure = $filename;
@@ -104,7 +103,7 @@ class CorporateOfficeController extends Controller
         $corporate_office = Corporate_Office::find($id);
 
         if ($request->hasFile('organizational_structure')) {
-            $filename = cloudinary()->upload(request()->organizational_structure->getRealPath())->getSecurePath();
+            $filename = $this->storeUpload($request->file('organizational_structure'), 'corporate_office');
             $corporate_office->organizational_structure = $filename;
         }
 

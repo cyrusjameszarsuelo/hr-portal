@@ -46,19 +46,19 @@
 
 									@if($hrWebsiteData->content_type_id == 8)
 
-											<embed src="{{asset($hrWebsiteData->image)}}" width="100%" style="height: 20vw;" />
+											<embed src="{{section_asset($hrWebsiteData->image, 'human_resources')}}" width="100%" style="height: 20vw;" />
 									@else
 										@if($hrWebsiteData->image != null)
 											@if(stripos($hrWebsiteData->image, 'mp4') !== FALSE)
-												<a href="{{asset($hrWebsiteData->image)}}" target="_blank">
+												<a href="{{section_asset($hrWebsiteData->image, 'human_resources')}}" target="_blank">
 			                                        <div class="front filter-img-block position-relative">
 			                                            <video width="290" height="220" >
-			                                              <source src="{{$hrWebsiteData->image}}" type="video/mp4">
+			                                              <source src="{{section_asset($hrWebsiteData->image, 'human_resources')}}" type="video/mp4">
 			                                            </video>
 			                                        </div>
 		                                    	</a>
 	                                        @else
-	                                        	<img src=" {{asset($hrWebsiteData->image )}} " alt="image alt text">
+	                                        	<img src=" {{section_asset($hrWebsiteData->image, 'human_resources')}} " alt="image alt text">
 	                                        @endif
 	                                    @else
 	                                    	<img src=" {{asset('img/blogs/default-blog-image.jpg')}} " alt="image alt text">
@@ -69,7 +69,7 @@
 								</div>
 							</div>
 							<div class="col-12 col-sm-7">
-								<h2 class="font-18 semi-font mt-3 mt-sm-0 mb-2"><a href="{{asset($hrWebsiteData->image)}}" target="_blank" class="fables-main-text-color fables-second-hover-color" id="blog_title">{{$hrWebsiteData->name}}</a></h2>
+								<h2 class="font-18 semi-font mt-3 mt-sm-0 mb-2"><a href="{{section_asset($hrWebsiteData->image, 'human_resources')}}" target="_blank" class="fables-main-text-color fables-second-hover-color" id="blog_title">{{$hrWebsiteData->name}}</a></h2>
 								<div class="fables-forth-text-color font-14 my-2">                                  
 									<span class="fables-icondata fables-second-text-color mr-1"></span> 
 									<span class="mr-3">{{Carbon\Carbon::parse($hrWebsiteData->created_at)->diffForHumans()}}</span>
@@ -101,7 +101,7 @@
 											@if(stripos($hrWebsiteData->image, 'mp4') !== FALSE)
 	                                        <div class="front filter-img-block position-relative">
 	                                            <video width="100" height="65" >
-	                                              <source src="{{$hrWebsiteData->image}}" type="video/mp4">
+	                                              <source src="{{section_asset($hrWebsiteData->image, 'human_resources')}}" type="video/mp4">
 	                                            </video>
 	                                        </div>
 	                                        @else
@@ -110,7 +110,7 @@
 												@if($hrWebsiteData->content_type_id == 8)
 													{{asset('img/blogs/default-blog-image.jpg')}}
 												@else
-													{{asset($hrWebsiteData->image )}}
+													{{section_asset($hrWebsiteData->image, 'human_resources')}}
 												@endif
 												" class="img-fluid w-100" alt="image alt text"></a>
 											</a>
@@ -126,7 +126,7 @@
 										
 									</div>
 									<div class="col-8 pl-0">
-										<a href="{{asset($hrWebsiteData->image)}}" target="_blank" class="fables-main-text-color bold-font fables-second-hover-color">{{$hrWebsiteData->name}}</a>
+										<a href="{{section_asset($hrWebsiteData->image, 'human_resources')}}" target="_blank" class="fables-main-text-color bold-font fables-second-hover-color">{{$hrWebsiteData->name}}</a>
 										<p class="fables-forth-text-color fables-blog-date-cat font-14 mt-1">{{Carbon\Carbon::parse($hrWebsiteData->created_at)->diffForHumans()}}</p>
 									</div>
 								</div>

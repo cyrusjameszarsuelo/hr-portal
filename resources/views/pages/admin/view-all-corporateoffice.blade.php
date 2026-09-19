@@ -62,7 +62,7 @@
 			        									<tr>
 			        										<td>{{$corporateOfficeData->id}}</td>
 			        										<td>{{$corporateOfficeData->department}}</td>
-			        										<td width="10%"><img src="{{$corporateOfficeData->organizational_structure}}" width="100%" alt=""></td>
+			        										<td width="10%"><img src="{{section_asset($corporateOfficeData->organizational_structure, 'corporate_office')}}" width="100%" alt=""></td>
 			        										<td><a target="_blank" href="{{$corporateOfficeData->manuals_link}}">{{ str_limit($corporateOfficeData->manuals_link, 40, '...') }}</a></td>
 			        										<td><a target="_blank" href="{{$corporateOfficeData->policies_link}}">
 			        											{{ str_limit($corporateOfficeData->policies_link, 40, '...') }}
