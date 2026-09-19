@@ -1,3 +1,11 @@
+                @php
+                    $authorizedEmails = array_map(
+                        fn ($email) => strtolower(trim($email)),
+                        config('community.delete_authorized_emails', [])
+                    );
+                    $currentEmail = strtolower(trim($user['mail'] ?? ''));
+                    $canDeleteCommBoard = $currentEmail !== '' && in_array($currentEmail, $authorizedEmails, true);
+                @endphp
                 <div class="d-flex align-items-center justify-content-between py-2 px-4 " id="community_board_page">
                     <h2 class="position-relative font-26 semi-font fables-blog-category-head fables-main-text-color fables-second-before pl-3 mb-3">Community Board</h2> 
                     <button class="btn btn-primary fables-btn-rounded btn-sm" id="addToBoard" data-toggle="modal" data-target="#addToBoardModal" onclick='document.getElementById("manageCommBoardForm").reset();'>Add to Board</button>
@@ -47,7 +55,7 @@
                                                             <a href="{{$communityData->link}}" type="button" class="btn btn-dark  btn-sm mt-2">Link</a>
                                                         @endif
                                                         <button class="btn btn-warning mt-2 btn-sm communityBtnView" type="button" data-toggle="modal" data-target="#getCommunityData" data-id="{{$communityData}}">View</button>
-                                                        @if(isset($commName))
+                                                        @if($canDeleteCommBoard)
                                                         <a type="button" class="btn btn-primary btn-sm mt-2" onclick="deleteCommBoard({{$communityData->id}})" data-toggle="modal" data-target="#deleteCommModal" >Delete</a>
                                                         <a type="button" class="btn btn-info btn-sm mt-2 communityBtnEdit"  data-toggle="modal" data-target="#addToBoardModal" data-id="{{$communityData}}">Edit</a>
                                                         @endif
@@ -68,7 +76,7 @@
                                                                 <a href="{{$communityData->link}}" class="btn btn-dark btn-sm">Link</a>
                                                             @endif
 
-                                                            @if(isset($commName))
+                                                            @if($canDeleteCommBoard)
                                                                 <a type="button" class="btn btn-primary btn-sm" onclick="deleteCommBoard({{$communityData->id}})" data-toggle="modal" data-target="#deleteCommModal">Delete</a>
                                                                 <a type="button" class="btn btn-info btn-sm communityBtnEdit" data-toggle="modal" data-target="#addToBoardModal" data-id="{{$communityData}}">Edit</a>
                                                             @endif

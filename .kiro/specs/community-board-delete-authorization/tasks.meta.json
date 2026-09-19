@@ -1,0 +1,154 @@
+{
+  "pbtResults": {
+    "1. Write bug condition exploration test": {
+      "status": "passed",
+      "failingExample": "Exploration test correctly detected the bug (3 of 4 cases fail on unfixed code; control case passes). Counterexamples: (1) Poster/not-authorized mail=randomemployee@megawide.com.ph, $commName set -> expected hidden but unfixed SHOWS (\"true is identical to false\"). (2) Authorized/never-posted mail=cjzarsuelo@megawide.com.ph, $commName=null -> expected shown but unfixed HIDES (\"false is identical to true\"). (3) Missing 'mail' key, $commName set -> expected hidden but unfixed SHOWS. Control (passes): jbarte@megawide.com.ph, $commName set -> both gates agree, shown. Root cause confirmed: gate uses isset($commName) (posting history) not config('community.delete_authorized_emails').",
+      "lastRunTimestamp": 1789828754819
+    }
+  },
+  "executionHistory": {
+    "1. Write bug condition exploration test": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587127
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828596242
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828784504
+      }
+    ],
+    "2. Write preservation property tests (BEFORE implementing fix)": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587196
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828789371
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789829052866
+      }
+    ],
+    "3.1 Create the config allowlist file": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587228
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789829057448
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789829099757
+      }
+    ],
+    "3.2 Add the `$canDeleteCommBoard` @php block to the partial": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587254
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789829105316
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789829161670
+      }
+    ],
+    "3.3 Replace both `isset($commName)` gates with `$canDeleteCommBoard`": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587280
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789829166154
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832497648
+      }
+    ],
+    "3.4 Verify bug condition exploration test now passes": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587334
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832566132
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832624949
+      }
+    ],
+    "3.5 Verify preservation tests still pass": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587359
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832631130
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832687846
+      }
+    ],
+    "4. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789828587394
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832694316
+      },
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832752640
+      }
+    ],
+    "3. Fix for Community Board Delete/Edit authorization": [
+      {
+        "executionId": "0de7ea46-e927-44f7-9277-4cc308df832c",
+        "chatSessionId": "sess_024c6921-1743-43a9-9e8c-2541794e7761",
+        "timestamp": 1789832687915
+      }
+    ]
+  }
+}
